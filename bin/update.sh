@@ -6,7 +6,7 @@ essid=$(nmcli dev wifi list | sed -n "s/^'\([^']*\)'.*yes\s*$/\1/p")
 # check for Guiney Home, exit otherwise
 if [ "$essid" != "Guiney Home" ]
 then
-    echo "Connection Failed."
+    echo "No connection to \"Guiney Home.\""
     exit
 fi
 
