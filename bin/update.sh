@@ -20,5 +20,6 @@ java -jar /home/austin/Desktop/shootout/bin/HTMLParser.jar -directory /home/aust
 # Update the change log.
 java -jar /home/austin/Desktop/shootout/bin/ChangeLog.jar
 
-# Update the graph.
-gnuplot /home/austin/Desktop/shootout/gnuplot/graph.gp > /home/austin/Desktop/shootout/gnuplot/Shootout_by_Game.svg
+# Update the graphs.
+gnuplot /home/austin/Desktop/shootout/gnuplot/graph.gp | echo "Updated graph.gp."
+gnuplot /home/austin/Desktop/shootout/gnuplot/histogram.gp | echo "Updated histogram.gp."
