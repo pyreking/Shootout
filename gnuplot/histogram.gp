@@ -22,6 +22,6 @@ set yrange [0:*]
 unset key
 set grid
 
-set output "/home/austin/Desktop/shootout/gnuplot/histogram.svg"
+set output "/home/austin/Desktop/shootout/gnuplot/Length.svg"
 
 plot "/home/austin/Desktop/shootout/shots/shots.csv" using 4:xticlabels(3) title columnheader
