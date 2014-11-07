@@ -6,6 +6,7 @@ set terminal svg
 set autoscale fix
 set xrange [15:*]
 set yrange [11:22]
+set datafile separator "|"
 
 set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "white" behind
 
@@ -27,4 +28,4 @@ f(x) = (x)
 
 set output "/home/austin/Desktop/shootout/gnuplot/Game.svg"
 
-plot "/home/austin/Desktop/shootout/summary/change_log.csv" using 4 title "Current Season" with lines, f(14.96) title "2009-10 Season" with lines, f(11.79) title "2005-06 Season" with lines
+plot "/home/austin/Desktop/shootout/summary/change_log.csv" using 2:4 title "Current Season" with lines, f(14.96) title "2009-10 Season" with lines, f(11.79) title "2005-06 Season" with lines
