@@ -16,9 +16,9 @@ set xtics 50
 set xlabel "Games"
 set ylabel "Percentage"
 
-set linetype 1 lc rgb "forest-green" lw 2 pt 7
-set linetype 2 lc rgb "red" lw 2 pt 7 #14.96
-set linetype 3 lc rgb "blue" lw 2 pt 7 #11.79
+set linetype 1 lc rgb "dark-pink" lw 2 pt 7
+set linetype 2 lc rgb "blue" lw 2 pt 7 #14.96
+set linetype 3 lc rgb "forest-green" lw 2 pt 7 #11.79
 
 set title "Shootout % by Game (2014-2015 NHL Season)"
 set key below
