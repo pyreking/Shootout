@@ -26,6 +26,6 @@ set grid
 
 f(x) = (x)
 
-set output "/home/austin/Desktop/shootout/gnuplot/Game.svg"
+set output "/home/austin/Desktop/shootout/gnuplot/graphs/Game.svg"
 
 plot "/home/austin/Desktop/shootout/summary/change_log.csv" using 2:4 title "Current Season" with lines, f(14.96) title "2009-10 Season" with lines, f(11.79) title "2005-06 Season" with lines
