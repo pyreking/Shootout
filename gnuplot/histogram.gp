@@ -5,7 +5,7 @@ reset
 set terminal svg
 set autoscale fix
 set title "Shootout Length (2014-2015 Season)"
-set datafile separator "|"
+set datafile separator ","
 
 set style data histogram
 set style histogram cluster gap 1

@@ -6,7 +6,7 @@ public class ArgsParser {
 	private String dirName = "/home/austin/Desktop/shootout/summary/";
 	private String inputName = "current.html";
 	private String outputName = "current.csv";
-	private String delimiter = "|";
+	private String delimiter = ",";
 	private boolean results = false;
 	private Options options;
 	private CommandLineParser parser;

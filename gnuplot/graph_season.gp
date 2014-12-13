@@ -4,7 +4,7 @@
 reset
 set terminal svg
 set autoscale fix
-set datafile separator "|"
+set datafile separator ","
 set grid
 
 set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "white" behind

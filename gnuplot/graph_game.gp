@@ -6,7 +6,7 @@ set terminal svg
 set autoscale fix
 set xrange [15:*]
 set yrange [11:22]
-set datafile separator "|"
+set datafile separator ","
 
 set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "white" behind
 

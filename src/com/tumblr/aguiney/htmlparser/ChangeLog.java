@@ -16,7 +16,7 @@ public class ChangeLog {
 			writer.print(e.text());
 			
 			if (e != es.last()) {
-				writer.print("|");
+				writer.print(",");
 			}
 		}
 		writer.println();
@@ -61,7 +61,7 @@ public class ChangeLog {
 				}
 				
 				try {
-					fileText = fileText.split("\\|")[1];
+					fileText = fileText.split("\\,")[1];
 					
 					if (output.length() == 0) {
 						printElements(ths, writer);
