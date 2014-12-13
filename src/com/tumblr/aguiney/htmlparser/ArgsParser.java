@@ -12,7 +12,6 @@ public class ArgsParser {
 	private CommandLineParser parser;
 	private CommandLine cmd;
 	
-
 	public ArgsParser(String[] arguments) throws ParseException {
 		options = new Options();
 		options.addOption("dir", "directory", true, 
