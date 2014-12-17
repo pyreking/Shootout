@@ -7,7 +7,6 @@ import java.util.Scanner;
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-// import org.apache.commons.cli.ParseException;
 
 public class ChangeLog {
 	
