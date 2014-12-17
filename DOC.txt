@@ -1,0 +1,40 @@
+bin/pull_files.sh: 
+
+Downloads the latest version of the HTML files, regardless of whether or 
+not the local copy has changed. NHL.com does not utilize an "If-Modified-
+Since" header, as the tables are generated on-the-fly. Without it, there is 
+no way to tell when the web page has been modified.
+
+bin/update.sh:
+
+Updates the local directory with new versions of the HTML, CSV, and SVG 
+files. This script will not execute unless there is a connection to my home 
+Wi-Fi.
+
+bin/backup.sh:
+
+Stages any modified or deleted files, and commits the changes with an 
+automated message. This script excludes any changes to files listed under 
+the src directory.
+
+bin/HTMLParser.jar:
+
+A Java program that parses an HTML table and into a CSV file. A "Date 
+Modified" stamp is added at the end of the CSV file. Uses the JSoup and 
+Commons CLI libraries.
+
+java -jar HTMLParser.jar [-args] runs the program.
+
+Arguments:
+
+-dir, -directory: directory containing the pre-parsed HTML file.
+-i, -input: filename for the pre-parsed HTML.
+-o, -ouput: filename for the parsed HTML.
+-d, -delimiter: delimiter for the table.
+-r, -results: display the number of results.
+
+bin/ChangeLog.jar:
+
+A Java program that documents changes made to an HTML table in a CSV file.
+
+java -jar ChangeLog.jar runs the program.
