@@ -14,16 +14,6 @@ import org.apache.commons.cli.ParseException;
 public class HTMLParser {
 
 	public static void main(String[] args) {
-		
-		/* TODO: Track "Shots to Decide" while removing pointless columns.
-		 * 		 + histogram
-		 * TODO: Track # of Overtime Games (numRes) + %'s, stats, etc.
-		 * TODO: Automate change_log.csv.
-		 * TODO: Work on gnuplot charts.
-		 * TODO: Track AHL shootouts/overtime?
-		 * TODO: Track other NHL.com tables?
-		 * TODO: Compile everything?
-		 */
 			String dirName = "";
 			String inputName = "";
 			String outputName = "";
