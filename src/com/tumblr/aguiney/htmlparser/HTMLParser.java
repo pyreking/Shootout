@@ -63,7 +63,21 @@ public class HTMLParser {
 			writer.println();
 			
 			for (Element tre : trs) {
-				writer.println(tre.text().replace(" ", delimiter));
+				Elements tds = tre.getElementsByTag("td");
+				
+				for (Element tde : tds) {
+					
+					if (tde.text().equals("")) {
+						writer.print(" ");
+					} else {
+						writer.print(tde.text());
+					}
+					
+					if (tde != tds.last()) {
+						writer.print(delimiter);
+					}
+				}
+				writer.println();
 			}
 			
 			if (results) {
