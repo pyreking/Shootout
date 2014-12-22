@@ -183,12 +183,12 @@
 		<polygon fill = 'currentColor' points = '378.6,422.4 399.6,422.4 399.6,409.6 378.6,409.6 '/>
 	</g>
 	<path stroke='black'  d='M378.6,422.4 L378.6,409.7 L399.5,409.7 L399.5,422.4 L378.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '425.1,422.4 446.1,422.4 446.1,409.6 425.1,409.6 '/>
+		<polygon fill = 'currentColor' points = '425.1,422.4 446.1,422.4 446.1,396.9 425.1,396.9 '/>
 	</g>
-	<path stroke='black'  d='M425.1,422.4 L425.1,409.7 L446.0,409.7 L446.0,422.4 L425.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '471.6,422.4 492.6,422.4 492.6,409.6 471.6,409.6 '/>
+	<path stroke='black'  d='M425.1,422.4 L425.1,397.0 L446.0,397.0 L446.0,422.4 L425.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+		<polygon fill = 'currentColor' points = '471.6,422.4 492.6,422.4 492.6,396.9 471.6,396.9 '/>
 	</g>
-	<path stroke='black'  d='M471.6,422.4 L471.6,409.7 L492.5,409.7 L492.5,422.4 L471.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+	<path stroke='black'  d='M471.6,422.4 L471.6,397.0 L492.5,397.0 L492.5,422.4 L471.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
 		<polygon fill = 'currentColor' points = '518.0,422.4 539.1,422.4 539.1,409.6 518.0,409.6 '/>
 	</g>
 	<path stroke='black'  d='M518.0,422.4 L518.0,409.7 L539.0,409.7 L539.0,422.4 L518.0,422.4 Z  '/></g>
