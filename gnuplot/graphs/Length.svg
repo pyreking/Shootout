@@ -172,9 +172,9 @@
 		<polygon fill = 'red' points = '99.6,422.4 120.7,422.4 120.7,327.3 99.6,327.3 '/>
 	</g>
 	<path stroke='black'  d='M99.6,422.4 L99.6,327.4 L120.6,327.4 L120.6,422.4 L99.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '146.1,422.4 167.1,422.4 167.1,232.2 146.1,232.2 '/>
+		<polygon fill = 'currentColor' points = '146.1,422.4 167.1,422.4 167.1,220.3 146.1,220.3 '/>
 	</g>
-	<path stroke='black'  d='M146.1,422.4 L146.1,232.3 L167.0,232.3 L167.0,422.4 L146.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+	<path stroke='black'  d='M146.1,422.4 L146.1,220.4 L167.0,220.4 L167.0,422.4 L146.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
 		<polygon fill = 'currentColor' points = '192.6,422.4 213.6,422.4 213.6,54.0 192.6,54.0 '/>
 	</g>
 	<path stroke='black'  d='M192.6,422.4 L192.6,54.1 L213.5,54.1 L213.5,422.4 L192.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
