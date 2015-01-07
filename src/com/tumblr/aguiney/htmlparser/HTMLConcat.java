@@ -37,6 +37,7 @@ public class HTMLConcat {
 				Elements trs = e.getElementsByTag("tr");
 				Elements a = e.getElementsByTag("a");
 				a.removeAttr("style");
+				a.removeAttr("href");
 				
 				if (i == 0) {
 					trs.remove(1);
