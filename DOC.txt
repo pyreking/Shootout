@@ -38,3 +38,19 @@ bin/ChangeLog.jar:
 A Java program that documents changes made to an HTML table in a CSV file.
 
 java -jar ChangeLog.jar runs the program.
+
+change_log.csv will be the resulting file.
+
+bin/HTMLConcat.jar:
+
+A Java program that concatenates several HTML tables into a single file.
+
+java -jar HTMLConcat.jar [args] runs the program.
+
+Arguments:
+
+Any number of HTML files to concatenate together.
+
+filename.html filename_2.html [...]
+
+concat.html will be the resulting file.
