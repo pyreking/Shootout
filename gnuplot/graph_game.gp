@@ -11,7 +11,7 @@ set datafile separator ","
 set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "white" behind
 
 set ytics 2
-set xtics 90
+set xtics 100
 
 set xlabel "Games"
 set ylabel "Percentage"
