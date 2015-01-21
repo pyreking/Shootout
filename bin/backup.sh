@@ -1,8 +1,18 @@
 #!/bin/bash
-cd /home/austin/Desktop/shootout/
+
+DIR="/home/austin/Desktop/shootout"
+
+cd $DIR/
+
 # Add modified files to the staging area.
+
 git add -u
-# Remove src folder from the staging area.
-git reset HEAD -- /home/austin/Desktop/shootout/src
+
+# Remove the selected directories from the staging area.
+
+git reset HEAD -- $DIR/shootout/src
+git reset HEAD -- $DIR/bin
+git reset HEAD -- $DIR/gnuplot/*.gp
+
 # Commit the changes.
-git commit -m "Automatic Cron Backup."
+# git commit -m "Automatic Cron Backup."
