@@ -15,4 +15,4 @@ git reset HEAD -- $DIR/bin
 git reset HEAD -- $DIR/gnuplot/*.gp
 
 # Commit the changes.
-# git commit -m "Automatic Cron Backup."
+git commit -m "Automatic Cron Backup."
