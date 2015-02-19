@@ -15,7 +15,7 @@ bin/backup.sh:
 
 Stages any modified or deleted files, and commits the changes with an 
 automated message. This script excludes any changes to files listed under 
-the src directory.
+the src and bin directories, as well as files with the .gp extension.
 
 bin/HTMLParser.jar:
 
