@@ -19,7 +19,7 @@ the src and bin directories, as well as files with the .gp extension.
 
 bin/HTMLParser.jar:
 
-A Java program that parses an HTML table and into a CSV file. A "Date 
+A Java program that parses an HTML table into a CSV file. A "Date 
 Modified" stamp is added at the end of the CSV file. Uses the JSoup and 
 Commons CLI libraries.
 
