@@ -23,9 +23,9 @@ public class ChangeLog {
 
 	public static void main(String[] args) {
 			File input = 
-				new File("/home/austin/Desktop/shootout/index/current.html");
+				new File("/home/austin/Desktop/shootout/summary/current.html");
 			File output = 
-				new File("/home/austin/Desktop/shootout/index/change_log.csv");
+				new File("/home/austin/Desktop/shootout/summary/change_log.csv");
 			SimpleDateFormat sdf = new SimpleDateFormat("MMM d y hh:mm:ss a z");
 			String date = sdf.format(input.lastModified());
 			String active = "";
@@ -44,7 +44,7 @@ public class ChangeLog {
 				Elements ths = e.getElementsByTag("th");
 				Elements trs = e.getElementsByTag("tr");
 				ths.add(dateHeader);
-				System.out.println(trs.get(0).text());
+		//		System.out.println(trs.get(0).text());
 				
 				trs.remove(0);
 				Elements tds = trs.first().getElementsByTag("td");
