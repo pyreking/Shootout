@@ -7,7 +7,6 @@ public class ArgsParser {
 	private String inputName = "current.html";
 	private String outputName = "current.csv";
 	private String delimiter = ",";
-	private boolean results = false;
 	private Options options;
 	private CommandLineParser parser;
 	private CommandLine cmd;
@@ -22,8 +21,6 @@ public class ArgsParser {
 				"filename for the parsed HTML");
 		options.addOption("d", "delimiter", true, 
 				"delimiter for the table");
-		options.addOption("r", "results", false, 
-				"display the number of results");
 		
 		parser = new DefaultParser();
 		cmd = parser.parse(options, arguments);
@@ -43,9 +40,6 @@ public class ArgsParser {
 		if (cmd.hasOption("d")) {
 			delimiter = cmd.getOptionValue("d");
 		}
-		if (cmd.hasOption("r")) {
-			results = true;
-		}
 	}
 	
 	public String getDirName() {
@@ -62,10 +56,6 @@ public class ArgsParser {
 	
 	public String getDelimiter() {
 		return delimiter;
-	}
-	
-	public boolean results() {
-		return results;
 	}
 	
 	public CommandLine getCommandLine() {

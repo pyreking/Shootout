@@ -40,10 +40,7 @@ public class HTMLConcat {
 				a.removeAttr("href");
 				a.removeAttr("onclick");
 				
-				if (i == 0) {
-					trs.remove(1);
-				} else {
-					trs.remove(0);
+				if (i > 0) {
 					trs.remove(0);
 				}
 				

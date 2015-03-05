@@ -18,7 +18,6 @@ public class HTMLParser {
 			String inputName = "";
 			String outputName = "";
 			String delimiter = "";
-			boolean results = false;
 			boolean success = true;
 			
 			try {
@@ -27,7 +26,6 @@ public class HTMLParser {
 				inputName = ap.getInputName();
 				outputName = ap.getOutputName();
 				delimiter = ap.getDelimiter();
-				results = ap.results();
 			} catch (ParseException pe) {
 				System.err.println("Error: " + pe.getMessage());
 				success = false;
@@ -48,9 +46,6 @@ public class HTMLParser {
 			
 			Elements ths = e.getElementsByTag("th");
 			Elements trs = e.getElementsByTag("tr");
-			Elements numRes = e.getElementsByClass("numRes");
-			trs.remove(0);
-			trs.remove(0);
 			
 			for (Element the : ths) {
 				writer.print(the.text());
@@ -59,8 +54,6 @@ public class HTMLParser {
 					writer.print(delimiter);
 				}
 			}
-			
-			writer.println();
 			
 			for (Element tre : trs) {
 				Elements tds = tre.getElementsByTag("td");
@@ -79,11 +72,6 @@ public class HTMLParser {
 				}
 				writer.println();
 			}
-			
-			if (results) {
-				writer.println(numRes.text());
-			}
-			
 			writer.print(System.lineSeparator() + "Last Updated: " + date);
 			writer.flush();
 			writer.close();
