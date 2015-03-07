@@ -14,6 +14,7 @@ public class HTMLConcat {
 	public static void main (String[] args) {
 		String dir = "/home/austin/Desktop/shootout/index/";
 		File[] inputs = new File[args.length];
+		// What about removing page #'s?
 		String stem = args[0].replaceAll(".html", "");
 		File output = new File(dir + stem + "-concat.html");
 		boolean success = true;
