@@ -14,7 +14,8 @@ public class HTMLConcat {
 	public static void main (String[] args) {
 		String dir = "/home/austin/Desktop/shootout/index/";
 		File[] inputs = new File[args.length];
-		File output = new File(dir + "concat.html");
+		String stem = args[0].replaceAll(".html", "");
+		File output = new File(dir + stem + "-concat.html");
 		boolean success = true;
 		
 		for (int i = 0; i < inputs.length; i++) {
