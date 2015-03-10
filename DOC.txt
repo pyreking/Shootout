@@ -31,7 +31,6 @@ Arguments:
 -i, -input: filename for the pre-parsed HTML.
 -o, -ouput: filename for the parsed HTML.
 -d, -delimiter: delimiter for the table.
--r, -results: display the number of results.
 
 bin/ChangeLog.jar:
 
