@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
-
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
@@ -20,20 +19,19 @@ public class HTMLParser {
 			String inputName = "current.html";
 			String outputName = "current.csv";
 			String delimiter = ",";
-			boolean success = true;
 			
 			Options options = new Options();
 			CommandLineParser parser = new DefaultParser();
 			
 			options.addOption("dir", "directory", true, 
 					"directory containing the pre-parsed HTML file");
-			options.addOption("i", "input", true, 
-					"filename for the pre-parsed HTML");
-			options.addOption("o", "output", true, 
-					"filename for the parsed HTML");
+			options.addOption("f", "file", true, 
+					"the pre-parsed HTML file");
+			options.addOption("n", "name", true, 
+					"name for the parsed HTML file");
 			options.addOption("d", "delimiter", true, 
-					"delimiter for the table");
-			options.addOption("h", "help", false, "print a list of commands");
+					"data seperator for the table");
+			options.addOption("h", "help", false, "print a list of commands and quit");
 			
 			try {
 				CommandLine cmd = parser.parse(options, args);
@@ -47,6 +45,18 @@ public class HTMLParser {
 				String footer = newline + "Please report issues at "
 						+ "https://github.com/pyreking/Shootout/issues" + ".";
 				
+				int length = cmd.getOptions().length;
+				
+				if (cmd.hasOption("h")) {
+					if (length == 1) {
+						help.printHelp("java -jar HTMLParser.jar", 
+								header, options, footer, true);
+						System.exit(0);
+					} else {
+						throw new ParseException("-help is a stand-alone argument.");
+					}
+				}
+				
 				if (cmd.hasOption("dir")) {
 					dirName = cmd.getOptionValue("dir");
 				}
@@ -59,14 +69,10 @@ public class HTMLParser {
 				if (cmd.hasOption("d")) {
 					delimiter = cmd.getOptionValue("d");
 				}
-				if (cmd.hasOption("h")) {
-					help.printHelp("java -jar HTMLParser.jar", 
-							header, options, footer, true);
-				}
 				
 			} catch (ParseException pe) {
 				System.err.println("Error: " + pe.getMessage());
-				success = false;
+				System.exit(1);
 			}
 			
 			File input = new File(dirName + inputName);
@@ -115,13 +121,12 @@ public class HTMLParser {
 			writer.close();
 		} catch (FileNotFoundException file) {
 			System.err.println("Error: " + file.getMessage());
-			success = false;
+			System.exit(1);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			success = false;
+			System.exit(1);
 		}
-		if (success) {
-		//	System.out.println("Updated " + output.getName() + ".");
+		
+		System.out.println("Updated " + output.getName() + ".");
 		}
 	}
-}

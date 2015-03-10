@@ -5,14 +5,35 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
+
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
+import org.apache.commons.cli.*;
 
 public class HTMLConcat {
 	
 	public static void main (String[] args) {
 		String dir = "/home/austin/Desktop/shootout/index/";
+		
+		Options options = new Options();
+		CommandLineParser parser = new DefaultParser();
+		
+		options.addOption("dir", "directory", true, 
+				"directory containing the pre-concatenated HTML");
+		options.addOption("f", "file", true, 
+				"the pre-parsed HTML file");
+		options.addOption("n", "name", true, 
+				"name for the concatenated HTML file");
+		options.addOption("h", "help", false, "print a list of commands and quit");
+		
+		
+		
+		
+		
+		
+		
+		
 		File[] inputs = new File[args.length];
 		// What about removing page #'s?
 		String stem = args[0].replaceAll(".html", "");

@@ -204,9 +204,9 @@
 		<polygon fill = 'currentColor' points = '311.1,422.4 327.6,422.4 327.6,401.5 311.1,401.5 '/>
 	</g>
 	<path stroke='black'  d='M311.1,422.4 L311.1,401.6 L327.5,401.6 L327.5,422.4 L311.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '347.6,422.4 364.1,422.4 364.1,401.5 347.6,401.5 '/>
+		<polygon fill = 'currentColor' points = '347.6,422.4 364.1,422.4 364.1,394.5 347.6,394.5 '/>
 	</g>
-	<path stroke='black'  d='M347.6,422.4 L347.6,401.6 L364.0,401.6 L364.0,422.4 L347.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+	<path stroke='black'  d='M347.6,422.4 L347.6,394.6 L364.0,394.6 L364.0,422.4 L347.6,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
 		<polygon fill = 'currentColor' points = '384.1,422.4 400.7,422.4 400.7,408.4 384.1,408.4 '/>
 	</g>
 	<path stroke='black'  d='M384.1,422.4 L384.1,408.5 L400.6,408.5 L400.6,422.4 L384.1,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
