@@ -6,26 +6,64 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
+
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.*;
 
 public class HTMLParser {
 
 	public static void main(String[] args) {
-			String dirName = "";
-			String inputName = "";
-			String outputName = "";
-			String delimiter = "";
+		// inDir and outDir
+			String dirName = "/home/austin/Desktop/shootout/summary/";
+			String inputName = "current.html";
+			String outputName = "current.csv";
+			String delimiter = ",";
 			boolean success = true;
 			
+			Options options = new Options();
+			CommandLineParser parser = new DefaultParser();
+			
+			options.addOption("dir", "directory", true, 
+					"directory containing the pre-parsed HTML file");
+			options.addOption("i", "input", true, 
+					"filename for the pre-parsed HTML");
+			options.addOption("o", "output", true, 
+					"filename for the parsed HTML");
+			options.addOption("d", "delimiter", true, 
+					"delimiter for the table");
+			options.addOption("h", "help", false, "print a list of commands");
+			
 			try {
-				ArgsParser ap = new ArgsParser(args);
-				dirName = ap.getDirName();
-				inputName = ap.getInputName();
-				outputName = ap.getOutputName();
-				delimiter = ap.getDelimiter();
+				CommandLine cmd = parser.parse(options, args);
+				HelpFormatter help = new HelpFormatter();
+				String newline = System.lineSeparator();
+				String header = newline + "A Java program that parses an "
+						+ "HTML table into a CSV file. A \"Date Modified\" " +
+						"stamp is added at the end of the CSV file. " +
+						"Uses the JSoup and Commons CLI libraries." + newline 
+						+ newline;
+				String footer = newline + "Please report issues at "
+						+ "https://github.com/pyreking/Shootout/issues" + ".";
+				
+				if (cmd.hasOption("dir")) {
+					dirName = cmd.getOptionValue("dir");
+				}
+				if (cmd.hasOption("i")) {
+					inputName = cmd.getOptionValue("i");
+				}
+				if (cmd.hasOption("o")) {
+					outputName = cmd.getOptionValue("o");
+				}
+				if (cmd.hasOption("d")) {
+					delimiter = cmd.getOptionValue("d");
+				}
+				if (cmd.hasOption("h")) {
+					help.printHelp("java -jar HTMLParser.jar", 
+							header, options, footer, true);
+				}
+				
 			} catch (ParseException pe) {
 				System.err.println("Error: " + pe.getMessage());
 				success = false;
@@ -83,7 +121,7 @@ public class HTMLParser {
 			success = false;
 		}
 		if (success) {
-			System.out.println("Updated " + output.getName() + ".");
+		//	System.out.println("Updated " + output.getName() + ".");
 		}
 	}
 }
