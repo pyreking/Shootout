@@ -14,20 +14,23 @@ import org.apache.commons.cli.*;
 public class HTMLParser {
 
 	public static void main(String[] args) {
-		// inDir and outDir
-			String dirName = "/home/austin/Desktop/shootout/summary/";
-			String inputName = "current.html";
-			String outputName = "current.csv";
+			String path = System.getProperty("user.dir") + "/";
+			String location = path;
+			String inputFile = "table.html";
+			String outputFile = "table.csv";
 			String delimiter = ",";
 			
 			Options options = new Options();
 			CommandLineParser parser = new DefaultParser();
 			
-			options.addOption("dir", "directory", true, 
-					"directory containing the pre-parsed HTML file");
-			options.addOption("f", "file", true, 
-					"the pre-parsed HTML file");
-			options.addOption("n", "name", true, 
+			options.addOption("p", "path", true, 
+					"absolute or relative path containing "
+					+ "the pre-parsed HTML files");
+			options.addOption("l", "location", true,
+					"absolute or relative path for the resulting file");
+			options.addOption(Option.builder("f").longOpt("file").
+					hasArg().required().desc("the pre-parsed HTML file").build());
+			options.addOption("o", "output", true, 
 					"name for the parsed HTML file");
 			options.addOption("d", "delimiter", true, 
 					"data seperator for the table");
@@ -42,7 +45,7 @@ public class HTMLParser {
 						"stamp is added at the end of the CSV file. " +
 						"Uses the JSoup and Commons CLI libraries." + newline 
 						+ newline;
-				String footer = newline + "Please report issues at "
+				String footer = newline + "Please report any issues at "
 						+ "https://github.com/pyreking/Shootout/issues" + ".";
 				
 				int length = cmd.getOptions().length;
@@ -57,14 +60,18 @@ public class HTMLParser {
 					}
 				}
 				
-				if (cmd.hasOption("dir")) {
-					dirName = cmd.getOptionValue("dir");
+				if (cmd.hasOption("p")) {
+					path = cmd.getOptionValue("p");
+					location = path;
 				}
-				if (cmd.hasOption("i")) {
-					inputName = cmd.getOptionValue("i");
+				if (cmd.hasOption("l")) {
+					location = cmd.getOptionValue("l");
+				}
+				if (cmd.hasOption("f")) {
+					inputFile = cmd.getOptionValue("f");
 				}
 				if (cmd.hasOption("o")) {
-					outputName = cmd.getOptionValue("o");
+					outputFile = cmd.getOptionValue("o");
 				}
 				if (cmd.hasOption("d")) {
 					delimiter = cmd.getOptionValue("d");
@@ -75,8 +82,8 @@ public class HTMLParser {
 				System.exit(1);
 			}
 			
-			File input = new File(dirName + inputName);
-			File output = new File(dirName + outputName);
+			File input = new File(path + inputFile);
+			File output = new File(location + outputFile);
 			
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("MMM d y hh:mm:ss a z");
@@ -119,8 +126,8 @@ public class HTMLParser {
 			writer.print(System.lineSeparator() + "Last Updated: " + date);
 			writer.flush();
 			writer.close();
-		} catch (FileNotFoundException file) {
-			System.err.println("Error: " + file.getMessage());
+		} catch (FileNotFoundException fnfe) {
+			System.err.println("Error: " + fnfe.getMessage());
 			System.exit(1);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

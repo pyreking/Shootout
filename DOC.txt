@@ -42,7 +42,7 @@ change_log.csv will be the resulting file.
 
 bin/HTMLConcat.jar:
 
-A Java program that concatenates several HTML tables into a single file.
+A Java program that concatenates several HTML tables into a single file. Strips out any unnecessary tags during the process. Uses the Commons CLI library.
 
 java -jar HTMLConcat.jar [args] runs the program.
 
