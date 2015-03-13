@@ -183,12 +183,12 @@
 	<g id="gnuplot_plot_1" ><title>gnuplot_plot_1</title>
 <g style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
 	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'red' points = '91.9,422.4 108.4,422.4 108.4,320.0 91.9,320.0 '/>
+		<polygon fill = 'red' points = '91.9,422.4 108.4,422.4 108.4,313.2 91.9,313.2 '/>
 	</g>
-	<path stroke='black'  d='M91.9,422.4 L91.9,320.1 L108.3,320.1 L108.3,422.4 L91.9,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'currentColor' points = '128.4,422.4 145.0,422.4 145.0,238.1 128.4,238.1 '/>
+	<path stroke='black'  d='M91.9,422.4 L91.9,313.3 L108.3,313.3 L108.3,422.4 L91.9,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+		<polygon fill = 'currentColor' points = '128.4,422.4 145.0,422.4 145.0,231.3 128.4,231.3 '/>
 	</g>
-	<path stroke='black'  d='M128.4,422.4 L128.4,238.2 L144.9,238.2 L144.9,422.4 L128.4,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+	<path stroke='black'  d='M128.4,422.4 L128.4,231.4 L144.9,231.4 L144.9,422.4 L128.4,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
 		<polygon fill = 'currentColor' points = '165.0,422.4 181.5,422.4 181.5,54.0 165.0,54.0 '/>
 	</g>
 	<path stroke='black'  d='M165.0,422.4 L165.0,54.1 L181.4,54.1 L181.4,422.4 L165.0,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
