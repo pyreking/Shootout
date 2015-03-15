@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Go to the project directory
+# Go to the project directory.
 DIR="/home/austin/Desktop/shootout"
 
 cd $DIR/
