@@ -1,37 +1,42 @@
-package com.tumblr.aguiney.htmlparser;
+package com.tumblr.aguiney.html.nhl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
-
 import org.jsoup.*;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 import org.apache.commons.cli.*;
 
-public class HTMLConcat {
+public class Concatenator {
 	
 	public static void main (String[] args) {
-		String path = "/home/austin/Desktop/shootout/index/";
+		String path = System.getProperty("user.dir") + "/";
 		String location = path;
-		String[] fileNames = new String[0];
+		String[] inputNames = new String[0];
 		String outputName = "concat.html";
 		
 		Options options = new Options();
 		CommandLineParser parser = new DefaultParser();
 		
 		options.addOption("p", "path", true, 
-				"absolute or relative path containing "
-				+ "the pre-concatenated HTML files");
+				"The absolute or relative path containing the "
+				+ "HTML files to concatenate. The default path is the "
+				+ "current directory.");
 		options.addOption("l", "location", true,
-				"absolute or relative path for the resulting file");
+				"The absolute or relative path for the concatenated HTML file. "
+				+ "The default location is the current directory "
+				+ "or specified path.");
 		options.addOption(Option.builder("f").longOpt("files")
-				.hasArgs().required().desc("the files to be concatenated").build());
+				.hasArgs().desc("A list of HTML files to concatenate. "
+						+ "Accepts multiple arguments. Required, "
+						+ "except when using the help option.").build());
 		options.addOption("o", "output", true, 
-				"name for the concatenated HTML file");
-		options.addOption("h", "help", false, "print a list of commands and quit");
+				"A name for the concatenated HTML file.");
+		options.addOption("h", "help", false, "Print this message and quit. "
+				+ "Cannot be used with another argument.");
 		
 		try {
 			CommandLine cmd = parser.parse(options, args);
@@ -48,41 +53,44 @@ public class HTMLConcat {
 			
 			if (cmd.hasOption("h")) {
 				if (length == 1) {
-					help.printHelp("java -jar HTMLConcat.jar", 
+					help.printHelp("java -jar Concatenator.jar", 
 							header, options, footer, true);
 					System.exit(0);
 				} else {
-					throw new ParseException("-help cannot be used with "
-							+ "another argument.");
+					throw new ParseException("-h is a mutually "
+							+ "exclusive argument.");
 				}
+			}
+			
+			if (!cmd.hasOption("f")) {
+				throw new MissingOptionException("-f is required, except "
+						+ "when using -h.");
+			} else {
+				inputNames = cmd.getOptionValues("f");
 			}
 			
 			if (cmd.hasOption("p")) {
 				path = cmd.getOptionValue("p");
 				location = path;
 			}
+			
 			if (cmd.hasOption("l")) {
 				location = cmd.getOptionValue("l");
 			}
-			if (cmd.hasOption("f")) {
-				fileNames = cmd.getOptionValues("f");
-				
-			}
+			
 			if (cmd.hasOption("o")) {
 				outputName = cmd.getOptionValue("o");
 			}
-			
-			
 		} catch (ParseException pe) {
 			System.err.println("Error: " + pe.getMessage());
 			System.exit(1);
 		}
 		
-		File[] files = new File[fileNames.length];
+		File[] files = new File[inputNames.length];
 		File output = new File(location + outputName);
 		
 		for (int i = 0; i < files.length; i++) {
-			files[i] = new File(path + fileNames[i]);
+			files[i] = new File(path + inputNames[i]);
 		}
 		
 		try {
