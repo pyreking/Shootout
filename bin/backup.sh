@@ -9,7 +9,7 @@ cd $DIR/
 git add $DIR/gnuplot/graphs/Game.svg
 git add $DIR/gnuplot/graphs/Length.svg
 git add $DIR/gnuplot/graphs/Season.svg
-git add $DIR/summary/change_log.csv
+git add $DIR/summary/changelog.csv
 git add $DIR/summary/current.csv
 git add $DIR/summary/current.html
 git add $DIR/shots/shots.csv
