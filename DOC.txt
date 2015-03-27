@@ -83,7 +83,7 @@ library.
 
 bin/PageCounter.jar:
 
-A Java program that determines the number of pages for a table on NHL.com. 
+A Java program that determines the number of pages a table has on NHL.com. 
 Prints a single number to the command line.
 
 usage: java -jar PageCounter.jar [<url>]
