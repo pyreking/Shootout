@@ -2,54 +2,92 @@ bin/pull_files.sh:
 
 Downloads the latest version of the HTML files, regardless of whether or 
 not the local copy has changed. NHL.com does not utilize an "If-Modified-
-Since" header, as the tables are generated on-the-fly. Without it, there is 
-no way to tell when the web page has been modified.
+Since" header, as the tables are generated on-the-fly. Without it, there 
+is no way to tell when the web page has been modified.
 
 bin/update.sh:
 
 Updates the local directory with new versions of the HTML, CSV, and SVG 
-files. This script will not execute unless there is a connection to my home 
-Wi-Fi.
+files. This script will not execute unless there is a connection to my 
+home Wi-Fi.
 
 bin/backup.sh:
 
-Stages any modified or deleted files, and commits the changes with an 
-automated message. This script excludes any changes to files listed under 
-the src and bin directories, as well as files with the .gp extension.
+Commits any changes to the HTML, CSV, and SVG files with an automated 
+message.
 
-bin/HTMLParser.jar:
+bin/TableParser.jar:
+
+usage: java -jar TableParser.jar [-d <arg>] [-f <arg>] [-h] [-l <arg>] [-o
+	<arg>] [-p <arg>]
 
 A Java program that parses an HTML table into a CSV file. A "Date 
 Modified" stamp is added at the end of the CSV file. Uses the JSoup and 
 Commons CLI libraries.
 
-java -jar HTMLParser.jar [-args] runs the program.
+ -d,--delimiter <arg>   A data seperator for the table.
+ -f,--file <arg>        An HTML file to parse. Required, except when using
+                        the help option.
+ -h,--help              Print this message and quit. Cannot be used with
+                        another argument.
+ -l,--location <arg>    The absolute or relative path for the CSV file.
+                        The default location is the current directory or
+                        specified path.
+ -o,--output <arg>      A name for the CSV file.
+ -p,--path <arg>        The absolute or relative path containing the HTML
+                        file to parse. The default path is the current
+                        directory.
 
-Arguments:
+bin/Changelog.jar:
 
--dir, -directory: directory containing the pre-parsed HTML file.
--i, -input: filename for the pre-parsed HTML.
--o, -ouput: filename for the parsed HTML.
--d, -delimiter: delimiter for the table.
+usage: java -jar Changelog.jar [-d <arg>] [-f <arg>] [-h] [-l <arg>] [-o
+       <arg>] [-p <arg>]
 
-bin/ChangeLog.jar:
+A Java program that creates a changelog for a modified HTML table. Uses 
+the Commons CLI library.
 
-A Java program that documents changes made to an HTML table in a CSV file.
+ -d,--delimiter <arg>   A data seperator for the changelog.
+ -f,--file <arg>        A modified HTML file. Required, except when using
+                        the help option.
+ -h,--help              Print this message and quit. Cannot be used with
+                        another option.
+ -l,--location <arg>    The absolute or relative path for the changelog.
+                        The default location is the current directory or
+                        specified path.
+ -o,--output <arg>      A name for the changelog.
+ -p,--path <arg>        The absolute or relative path containing a
+                        modified HTML file. The default path is the
+                        current directory.
 
-java -jar ChangeLog.jar runs the program.
+bin/Concatenator.jar:
 
-change_log.csv will be the resulting file.
+usage: java -jar Concatenator.jar [-f <arg>] [-h] [-l <arg>] [-o <arg>] [-p 
+	<arg>]
 
-bin/HTMLConcat.jar:
+A Java program that concatenates several HTML tables into a single file. 
+Strips out any unnecessary tags during the process. Uses the Commons CLI 
+library.
 
-A Java program that concatenates several HTML tables into a single file. Strips out any unnecessary tags during the process. Uses the Commons CLI library.
+ -f,--files <arg>      A list of HTML files to concatenate. Accepts
+                       multiple arguments. Required, except when using the
+                       help option.
+ -h,--help             Print this message and quit. Cannot be used with
+                       another argument.
+ -l,--location <arg>   The absolute or relative path for the concatenated
+                       HTML file. The default location is the current
+                       directory or specified path.
+ -o,--output <arg>     A name for the concatenated HTML file.
+ -p,--path <arg>       The absolute or relative path containing the HTML
+                       files to concatenate. The default path is the
+                       current directory.
 
-java -jar HTMLConcat.jar [args] runs the program.
+bin/PageCounter.jar:
 
-Arguments:
+A Java program that determines the number of pages for a table on NHL.com. 
+Prints a single number to the command line.
 
-Any number of HTML files to concatenate together.
+usage: java -jar PageCounter.jar [<url>]
 
-filename.html filename_2.html [...]
+ <url>			A URL to a table with multiple pages.
 
-concat.html will be the resulting file.
+Please report any issues at https://github.com/pyreking/Shootout/issues.
