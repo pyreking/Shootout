@@ -18,7 +18,7 @@ java -jar /home/austin/Desktop/shootout/bin/TableParser.jar -path /home/austin/D
 java -jar /home/austin/Desktop/shootout/bin/TableParser.jar -path /home/austin/Desktop/shootout/shots/ -file shots.html -output shots.csv
 
 # Update the changelog.
-java -jar /home/austin/Desktop/shootout/bin/Changelog.jar -path /home/austin/Desktop/shootout/summary/ -file current.html -ouput changelog.csv
+java -jar /home/austin/Desktop/shootout/bin/Changelog.jar -path /home/austin/Desktop/shootout/summary/ -file current.html -output changelog.csv
 
 # Update the graphs.
 gnuplot /home/austin/Desktop/shootout/gnuplot/graph_game.gp | echo "Updated graph_game.gp"
