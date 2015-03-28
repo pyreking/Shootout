@@ -24,7 +24,7 @@ public class PageCounter {
 			pages = Double.valueOf(split[2]) / 30;
 			pages = Math.ceil(pages);
 			
-			System.out.print((int) pages);
+			System.out.println((int) pages);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
