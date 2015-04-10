@@ -190,9 +190,9 @@
 	<g id="gnuplot_plot_1" ><title>gnuplot_plot_1</title>
 <g style="fill:none; color:red; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
 	<g style = 'stroke:none; shape-rendering:crispEdges'>
-		<polygon fill = 'red' points = '91.9,422.4 108.4,422.4 108.4,305.7 91.9,305.7 '/>
+		<polygon fill = 'red' points = '91.9,422.4 108.4,422.4 108.4,299.5 91.9,299.5 '/>
 	</g>
-	<path stroke='black'  d='M91.9,422.4 L91.9,305.8 L108.3,305.8 L108.3,422.4 L91.9,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
+	<path stroke='black'  d='M91.9,422.4 L91.9,299.6 L108.3,299.6 L108.3,422.4 L91.9,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
 		<polygon fill = 'currentColor' points = '128.4,422.4 145.0,422.4 145.0,201.3 128.4,201.3 '/>
 	</g>
 	<path stroke='black'  d='M128.4,422.4 L128.4,201.4 L144.9,201.4 L144.9,422.4 L128.4,422.4 Z  '/>	<g style = 'stroke:none; shape-rendering:crispEdges'>
