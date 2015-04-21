@@ -16,6 +16,11 @@ bin/backup.sh:
 Commits any changes to the HTML, CSV, and SVG files with an automated 
 message.
 
+bin/pages.sh
+
+Parses an HTML table with multiple pages on NHL.com into a single CSV file. Uses 
+bin/PageCounter.jar, bin/Concatenator.jar, and bin/TableParser.jar.
+
 bin/TableParser.jar:
 
 usage: java -jar TableParser.jar [-d <arg>] [-f <arg>] [-h] [-l <arg>] [-o
