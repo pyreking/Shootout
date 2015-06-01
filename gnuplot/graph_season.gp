@@ -22,6 +22,6 @@ set xdata time
 set timefmt "%Y-%Y"
 set format x "%Y"
 
-set output "/home/austin/Desktop/shootout/gnuplot/graphs/Season.svg"
+set output "/home/austin/Desktop/Java/HTML/shootout/gnuplot/graphs/Season.svg"
 
-plot "/home/austin/Desktop/shootout/summary/current.csv" using 1:4 title "" with lines
+plot "/home/austin/Desktop/Java/HTML/shootout/summary/current.csv" using 1:4 title "" with lines

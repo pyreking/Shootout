@@ -4,7 +4,7 @@
 reset
 set terminal svg
 set autoscale fix
-set xrange [0:*]
+set xrange [0:1230]
 set yrange [9:24]
 set datafile separator ","
 
@@ -27,6 +27,6 @@ set grid
 
 f(x) = (x)
 
-set output "/home/austin/Desktop/shootout/gnuplot/graphs/Game.svg"
+set output "/home/austin/Desktop/Java/HTML/shootout/gnuplot/graphs/Game.svg"
 
-plot "/home/austin/Desktop/shootout/summary/changelog.csv" using 2:4 title "Current Season" with lines, f(14.96) title "2009-10 Season" with lines, f(11.79) title "2005-06 Season" with lines, "<echo '294,14.63'" with points title "dry scrape gone"
+plot "/home/austin/Desktop/Java/HTML/shootout/summary/changelog.csv" using 2:4 title "Current Season" with lines, f(14.96) title "2009-10 Season" with lines, f(11.79) title "2005-06 Season" with lines, "<echo '294,14.63'" with points title "dry scrape gone"
