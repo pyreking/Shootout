@@ -1,5 +1,8 @@
 #!/bin/bash
 
-wget -O /home/austin/Desktop/shootout/summary/current.html "http://www.nhl.com/stats/shootout?season=20142015&team=&viewName=summary"
+# The project directory on my filesystem.
+URI="/home/austin/Desktop/Java/HTML/shootout"
 
-wget -O /home/austin/Desktop/shootout/shots/shots.html "http://www.nhl.com/stats/shootout?season=20142015&team=&viewName=shotsToDecide"
+wget -O $URI/summary/current.html "http://www.nhl.com/stats/shootout?season=20142015&team=&viewName=summary"
+
+wget -O $URI/shots/shots.html "http://www.nhl.com/stats/shootout?season=20142015&team=&viewName=shotsToDecide"

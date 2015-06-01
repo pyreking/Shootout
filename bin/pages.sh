@@ -1,9 +1,14 @@
 #/bin/bash
 
-# The table to download.
+# The project directory on my filesystem.
+DIR="/home/austin/Desktop/Java/HTML/shootout"
+
+# An HTML table to download.
 URL="http://www.nhl.com/stats/game?season=20132014&gameType=2&team=&viewName=gameByGameOvertimesAndShootouts"
+
 # The number of pages in $URL.
 PAGES=`java -jar PageCounter.jar $URL`
+
 # A regular expression for a positive integer.
 NUM='^[0-9]+$'
 
@@ -27,7 +32,7 @@ files=([1-900].html)
 cd ~/Desktop/shootout/bin
 
 # Concatenate the pages in $files together.
-java -jar Concatenator.jar -p "/tmp/" -l "/home/austin/Desktop/shootout/" -o so_ot_games.html -f "${files[@]}"
+java -jar Concatenator.jar -p "/tmp/" -l "$DIR" -o so_ot_games.html -f "${files[@]}"
 
 # Parse the concatenated file.
-java -jar TableParser.jar -p /home/austin/Desktop/shootout/overtime/ -o multi_ot_games.csv -f ot_games.html
+java -jar TableParser.jar -p $DIR/overtime/ -o multi_ot_games.csv -f ot_games.html

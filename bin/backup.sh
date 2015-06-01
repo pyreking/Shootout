@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Go to the project directory.
-DIR="/home/austin/Desktop/shootout"
+DIR="/home/austin/Desktop/Java/HTML/shootout"
 
 cd $DIR/
 

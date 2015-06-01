@@ -10,19 +10,22 @@ then
     exit
 fi
 
+# The project directory on my filesystem.
+DIR="/home/austin/Desktop/Java/HTML/shootout"
+
 # Download the files.
-sh /home/austin/Desktop/shootout/bin/pull_files.sh
+sh $DIR/bin/pull_files.sh
 
 # Parse the HTML tables into csv files.
-java -jar /home/austin/Desktop/shootout/bin/TableParser.jar -path /home/austin/Desktop/shootout/summary/ -file current.html -output current.csv
-java -jar /home/austin/Desktop/shootout/bin/TableParser.jar -path /home/austin/Desktop/shootout/shots/ -file shots.html -output shots.csv
+java -jar $DIR/bin/TableParser.jar -path $DIR/summary/ -file current.html -output current.csv
+java -jar $DIR/bin/TableParser.jar -path $DIR/shots/ -file shots.html -output shots.csv
 
 # Update the changelog.
-java -jar /home/austin/Desktop/shootout/bin/Changelog.jar -path /home/austin/Desktop/shootout/summary/ -file current.html -output changelog.csv
+java -jar $DIR/bin/Changelog.jar -path $DIR/summary/ -file current.html -output changelog.csv
 
 # Update the graphs.
-gnuplot /home/austin/Desktop/shootout/gnuplot/graph_game.gp | echo "Updated graph_game.gp"
+gnuplot $DIR/gnuplot/graph_game.gp | echo "Updated graph_game.gp"
 
-gnuplot /home/austin/Desktop/shootout/gnuplot/graph_season.gp | echo "Updated graph_season.gp"
+gnuplot $DIR/gnuplot/graph_season.gp | echo "Updated graph_season.gp"
 
-gnuplot /home/austin/Desktop/shootout/gnuplot/histogram.gp | echo "Updated histogram.gp."
+gnuplot $DIR/gnuplot/histogram.gp | echo "Updated histogram.gp."
