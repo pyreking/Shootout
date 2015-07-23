@@ -20,7 +20,8 @@ set ylabel "Times Occured"
 set yrange [0:*]
 
 unset key
-set grid
+unset border
+set tics scale 0
 
 set output "/home/austin/Desktop/Java/HTML/shootout/gnuplot/graphs/Length.svg"
 
